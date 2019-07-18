@@ -12,7 +12,19 @@
     <module>basic-kafka</module>
   </modules>
 
+  <properties>
+    <kafka.version>2.3.0</kafka.version>
+
+    <lombok.version>1.16.22</lombok.version>
+  </properties>
+
   <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
