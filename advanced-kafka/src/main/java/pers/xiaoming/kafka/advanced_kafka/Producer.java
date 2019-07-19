@@ -5,21 +5,21 @@ import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
+import pers.xiaoming.kafka.advanced_kafka.models.Person;
 
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
 public class Producer extends Thread implements AutoCloseable {
-    private final KafkaProducer<Integer, String> producer;
+    private final KafkaProducer<Integer, Person> producer;
     private final String topic;
-    private final boolean isAsync;
+    private final AtomicInteger no;
 
-    public Producer(String propertyFileName, boolean isAsync) throws IOException {
-        this.isAsync = isAsync;
+    public Producer(String propertyFileName) throws IOException {
+        this.no = new AtomicInteger(0);
 
         Properties properties = PropertyUtils.loadProperties(propertyFileName);
         this.topic = properties.getProperty("topic");
@@ -28,31 +28,18 @@ public class Producer extends Thread implements AutoCloseable {
 
     @Override
     public void run() {
-        int messageNo = 1;
         while (true) {
-            String messageStr = "Message_" + messageNo;
+            int id = no.getAndIncrement();
+            Person person = new Person(id, "Person");
             long startTime = System.currentTimeMillis();
-            if (isAsync) {
-                producer.send(new ProducerRecord<>(topic, messageNo, messageStr),
-                        new DemoCallBack(startTime, messageNo, messageStr));
-            } else {
-                try {
-                    producer.send(new ProducerRecord<>(topic, messageNo, messageStr)).get();
-                    long elapsedTime = System.currentTimeMillis() - startTime;
-                    log.info("Message No: {},  {}, has been set in {} ms",
-                            messageNo, messageStr, elapsedTime);
-                } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
-            }
+            producer.send(new ProducerRecord<>(topic, id, person),
+                    new MyCallBack(startTime, id, person));
 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            messageNo++;
         }
     }
 
@@ -64,12 +51,12 @@ public class Producer extends Thread implements AutoCloseable {
         }
     }
 
-    private class DemoCallBack implements Callback {
+    private class MyCallBack implements Callback {
         private final long startTime;
         private final int key;
-        private final String message;
+        private final Person message;
 
-        DemoCallBack(long startTime, int key, String message) {
+        MyCallBack(long startTime, int key, Person message) {
             this.startTime = startTime;
             this.key = key;
             this.message = message;
