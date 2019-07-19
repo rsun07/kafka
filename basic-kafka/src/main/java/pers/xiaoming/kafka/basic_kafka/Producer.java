@@ -36,6 +36,9 @@ public class Producer extends Thread {
             } else {
                 try {
                     producer.send(new ProducerRecord<>(topic, messageNo, messageStr)).get();
+                    long elapsedTime = System.currentTimeMillis() - startTime;
+                    log.info("Message No: {},  {}, has been set in {} ms",
+                            messageNo, messageStr, elapsedTime);
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();
                 }
