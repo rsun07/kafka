@@ -1,0 +1,808 @@
+/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/bin/java -ea -Didea.test.cyclic.buffer.size=1048576 "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=63733:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath "/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar:/Applications/IntelliJ IDEA CE.app/Contents/plugins/junit/lib/junit-rt.jar:/Applications/IntelliJ IDEA CE.app/Contents/plugins/junit/lib/junit5-rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/lib/tools.jar:/Users/xiaoming.sun/Courses/kafka/advanced-kafka/target/test-classes:/Users/xiaoming.sun/Courses/kafka/advanced-kafka/target/classes:/Users/xiaoming.sun/.m2/repository/org/apache/kafka/kafka-clients/2.3.0/kafka-clients-2.3.0.jar:/Users/xiaoming.sun/.m2/repository/com/github/luben/zstd-jni/1.4.0-1/zstd-jni-1.4.0-1.jar:/Users/xiaoming.sun/.m2/repository/org/lz4/lz4-java/1.6.0/lz4-java-1.6.0.jar:/Users/xiaoming.sun/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.3/snappy-java-1.1.7.3.jar:/Users/xiaoming.sun/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar:/Users/xiaoming.sun/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/xiaoming.sun/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/xiaoming.sun/.m2/repository/org/projectlombok/lombok/1.16.22/lombok-1.16.22.jar:/Users/xiaoming.sun/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/xiaoming.sun/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar" com.intellij.rt.execution.junit.JUnitStarter -ideVersion5 -junit4 pers.xiaoming.kafka.advanced_kafka.AdvancedKafkaTest
+13:20:39,949 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:20:39,950 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+13:20:39,950 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/xiaoming.sun/Courses/kafka/advanced-kafka/target/classes/logback.xml]
+13:20:40,018 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+13:20:40,019 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:20:40,027 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+13:20:40,060 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+13:20:40,060 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+13:20:40,060 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+13:20:40,061 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [pers.xiaoming.kafka] to INFO
+13:20:40,061 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [pers.xiaoming.kafka] to false
+13:20:40,061 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[pers.xiaoming.kafka]
+13:20:40,062 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+13:20:40,062 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+13:20:40,062 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+13:20:40,063 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@2cb4c3ab - Registering current configuration as safe fallback point
+
+183  [main]  INFO o.a.k.c.p.ProducerConfig - ProducerConfig values:
+	acks = all
+	batch.size = 10
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 0
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.IntegerSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class pers.xiaoming.kafka.advanced_kafka.producer.PersonPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 1000
+	retries = 2
+	retry.backoff.ms = 50
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class pers.xiaoming.kafka.advanced_kafka.models.PersonSerializer
+
+346  [main]  WARN o.a.k.c.p.ProducerConfig - The configuration 'interceptor.classesinterceptor.classes' was supplied but isn't a known config.
+348  [main]  WARN o.a.k.c.p.ProducerConfig - The configuration 'topic' was supplied but isn't a known config.
+350  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka version: 2.3.0
+350  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka commitId: fc1aaa116b661c8a
+350  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1563567640277
+353  [main]  INFO o.a.k.c.p.ProducerConfig - ProducerConfig values:
+	acks = all
+	batch.size = 10
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.IntegerSerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class pers.xiaoming.kafka.advanced_kafka.producer.PersonPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 1000
+	retries = 2
+	retry.backoff.ms = 50
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class pers.xiaoming.kafka.advanced_kafka.models.PersonSerializer
+
+365  [main]  WARN o.a.k.c.p.ProducerConfig - The configuration 'interceptor.classesinterceptor.classes' was supplied but isn't a known config.
+365  [main]  WARN o.a.k.c.p.ProducerConfig - The configuration 'topic' was supplied but isn't a known config.
+365  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka version: 2.3.0
+365  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka commitId: fc1aaa116b661c8a
+365  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1563567640294
+378  [main]  INFO o.a.k.c.c.ConsumerConfig - ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 0
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = advanced_kafka_demo_consumer
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.IntegerDeserializer
+	max.partition.fetch.bytes = 128
+	max.poll.interval.ms = 300000
+	max.poll.records = 10
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 30000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class pers.xiaoming.kafka.advanced_kafka.models.PersonDeserializer
+
+416  [main]  WARN o.a.k.c.c.ConsumerConfig - The configuration 'topic' was supplied but isn't a known config.
+416  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka version: 2.3.0
+416  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka commitId: fc1aaa116b661c8a
+416  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1563567640345
+417  [main]  INFO o.a.k.c.c.ConsumerConfig - ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 1
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = advanced_kafka_demo_consumer
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.IntegerDeserializer
+	max.partition.fetch.bytes = 128
+	max.poll.interval.ms = 300000
+	max.poll.records = 10
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 30000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class pers.xiaoming.kafka.advanced_kafka.models.PersonDeserializer
+
+418  [pool-2-thread-1]  INFO o.a.k.c.c.KafkaConsumer - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Subscribed to topic(s): advanced_kafka_demo
+418  [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Subscribe into topic advanced_kafka_demo, partitions []
+425  [main]  WARN o.a.k.c.c.ConsumerConfig - The configuration 'topic' was supplied but isn't a known config.
+425  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka version: 2.3.0
+425  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka commitId: fc1aaa116b661c8a
+425  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1563567640354
+425  [pool-2-thread-2]  INFO o.a.k.c.c.KafkaConsumer - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Subscribed to topic(s): advanced_kafka_demo
+425  [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Subscribe into topic advanced_kafka_demo, partitions []
+426  [main]  INFO o.a.k.c.c.ConsumerConfig - ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 2
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = advanced_kafka_demo_consumer
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.IntegerDeserializer
+	max.partition.fetch.bytes = 128
+	max.poll.interval.ms = 300000
+	max.poll.records = 10
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 30000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class pers.xiaoming.kafka.advanced_kafka.models.PersonDeserializer
+
+431  [main]  WARN o.a.k.c.c.ConsumerConfig - The configuration 'topic' was supplied but isn't a known config.
+432  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka version: 2.3.0
+432  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka commitId: fc1aaa116b661c8a
+432  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1563567640360
+432  [pool-2-thread-3]  INFO o.a.k.c.c.KafkaConsumer - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Subscribed to topic(s): advanced_kafka_demo
+432  [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Subscribe into topic advanced_kafka_demo, partitions []
+432  [main]  INFO o.a.k.c.c.ConsumerConfig - ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 3
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = advanced_kafka_demo_consumer
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.IntegerDeserializer
+	max.partition.fetch.bytes = 128
+	max.poll.interval.ms = 300000
+	max.poll.records = 10
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 30000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class pers.xiaoming.kafka.advanced_kafka.models.PersonDeserializer
+
+438  [main]  WARN o.a.k.c.c.ConsumerConfig - The configuration 'topic' was supplied but isn't a known config.
+438  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka version: 2.3.0
+438  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka commitId: fc1aaa116b661c8a
+438  [main]  INFO o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1563567640367
+438  [pool-2-thread-4]  INFO o.a.k.c.c.KafkaConsumer - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Subscribed to topic(s): advanced_kafka_demo
+439  [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Subscribe into topic advanced_kafka_demo, partitions []
+601  [pool-2-thread-4]  INFO o.a.k.c.Metadata - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Cluster ID: roI5RtGRRVKaAaJ6Pu1JtA
+601  [pool-2-thread-1]  INFO o.a.k.c.Metadata - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Cluster ID: roI5RtGRRVKaAaJ6Pu1JtA
+601  [pool-2-thread-3]  INFO o.a.k.c.Metadata - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Cluster ID: roI5RtGRRVKaAaJ6Pu1JtA
+602  [kafka-producer-network-thread | 0]  INFO o.a.k.c.Metadata - [Producer clientId=0] Cluster ID: roI5RtGRRVKaAaJ6Pu1JtA
+602  [pool-2-thread-2]  INFO o.a.k.c.Metadata - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Cluster ID: roI5RtGRRVKaAaJ6Pu1JtA
+603  [kafka-producer-network-thread | 1]  INFO o.a.k.c.Metadata - [Producer clientId=1] Cluster ID: roI5RtGRRVKaAaJ6Pu1JtA
+604  [pool-2-thread-4]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Discovered group coordinator 172.21.157.16:9092 (id: 2147483647 rack: null)
+604  [pool-2-thread-2]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Discovered group coordinator 172.21.157.16:9092 (id: 2147483647 rack: null)
+604  [pool-2-thread-3]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Discovered group coordinator 172.21.157.16:9092 (id: 2147483647 rack: null)
+604  [pool-2-thread-1]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Discovered group coordinator 172.21.157.16:9092 (id: 2147483647 rack: null)
+608  [pool-2-thread-1]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Revoking previously assigned partitions []
+609  [pool-2-thread-3]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Revoking previously assigned partitions []
+609  [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [] revoked
+609  [pool-2-thread-1]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+610  [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [] revoked
+608  [pool-2-thread-4]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Revoking previously assigned partitions []
+610  [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [] revoked
+610  [pool-2-thread-4]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+610  [pool-2-thread-3]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+611  [pool-2-thread-2]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Revoking previously assigned partitions []
+611  [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [] revoked
+611  [pool-2-thread-2]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+651  [pool-2-thread-4]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+652  [pool-2-thread-1]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+653  [pool-2-thread-3]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+654  [pool-2-thread-2]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] (Re-)joining group
+707  [pool-2-thread-3]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Successfully joined group with generation 1
+708  [pool-2-thread-4]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Successfully joined group with generation 1
+709  [pool-2-thread-2]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Successfully joined group with generation 1
+711  [pool-2-thread-1]  INFO o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Successfully joined group with generation 1
+712  [pool-2-thread-4]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Setting newly assigned partitions: advanced_kafka_demo-3
+712  [pool-2-thread-3]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Setting newly assigned partitions: advanced_kafka_demo-2
+712  [pool-2-thread-2]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Setting newly assigned partitions: advanced_kafka_demo-1
+712  [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [advanced_kafka_demo-1] assigned
+712  [pool-2-thread-1]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Setting newly assigned partitions: advanced_kafka_demo-0
+712  [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [advanced_kafka_demo-2] assigned
+712  [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [advanced_kafka_demo-0] assigned
+712  [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Topic advanced_kafka_demo on partitions [advanced_kafka_demo-3] assigned
+738  [pool-2-thread-2]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Found no committed offset for partition advanced_kafka_demo-1
+738  [pool-2-thread-3]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Found no committed offset for partition advanced_kafka_demo-2
+738  [pool-2-thread-1]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Found no committed offset for partition advanced_kafka_demo-0
+738  [pool-2-thread-4]  INFO o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Found no committed offset for partition advanced_kafka_demo-3
+781  [pool-2-thread-2]  INFO o.a.k.c.c.i.SubscriptionState - [Consumer clientId=1, groupId=advanced_kafka_demo_consumer] Resetting offset for partition advanced_kafka_demo-1 to offset 0.
+781  [pool-2-thread-3]  INFO o.a.k.c.c.i.SubscriptionState - [Consumer clientId=2, groupId=advanced_kafka_demo_consumer] Resetting offset for partition advanced_kafka_demo-2 to offset 0.
+782  [pool-2-thread-4]  INFO o.a.k.c.c.i.SubscriptionState - [Consumer clientId=3, groupId=advanced_kafka_demo_consumer] Resetting offset for partition advanced_kafka_demo-3 to offset 0.
+782  [pool-2-thread-1]  INFO o.a.k.c.c.i.SubscriptionState - [Consumer clientId=0, groupId=advanced_kafka_demo_consumer] Resetting offset for partition advanced_kafka_demo-0 to offset 0.
+1102 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 2,  Person(id=2, name=Person_2), has been set to partition 3, offset 1 in 238 ms
+1102 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 2,  Person(id=2, name=Person_2), has been set to partition 3, offset 0 in 238 ms
+1102 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 1,  Person(id=1, name=Person_1), has been set to partition 2, offset 0 in 342 ms
+1102 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 1,  Person(id=1, name=Person_1), has been set to partition 2, offset 1 in 342 ms
+1103 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 0,  Person(id=0, name=Person_0), has been set to partition 1, offset 1 in 737 ms
+1103 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 0,  Person(id=0, name=Person_0), has been set to partition 1, offset 0 in 750 ms
+1112 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 2, value Person(id=2, name=Person_2), at offset 0
+1112 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 1, value Person(id=1, name=Person_1), at offset 0
+1112 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 0, value Person(id=0, name=Person_0), at offset 0
+1119 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 1, value Person(id=1, name=Person_1), at offset 1
+1119 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 0, value Person(id=0, name=Person_0), at offset 1
+1119 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 2, value Person(id=2, name=Person_2), at offset 1
+1491 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 6, value Person(id=6, name=Person_6), at offset 0
+1491 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 5, value Person(id=5, name=Person_5), at offset 2
+1492 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 5,  Person(id=5, name=Person_5), has been set to partition 2, offset 3 in 317 ms
+1492 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 4,  Person(id=4, name=Person_4), has been set to partition 1, offset 3 in 420 ms
+1492 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 5,  Person(id=5, name=Person_5), has been set to partition 2, offset 2 in 317 ms
+1492 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 6,  Person(id=6, name=Person_6), has been set to partition 0, offset 0 in 217 ms
+1492 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 4,  Person(id=4, name=Person_4), has been set to partition 1, offset 2 in 420 ms
+1492 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 6,  Person(id=6, name=Person_6), has been set to partition 0, offset 1 in 217 ms
+1493 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 4, value Person(id=4, name=Person_4), at offset 2
+1493 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 6, value Person(id=6, name=Person_6), at offset 1
+1494 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 5, value Person(id=5, name=Person_5), at offset 3
+1495 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 4, value Person(id=4, name=Person_4), at offset 3
+1902 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 9, value Person(id=9, name=Person_9), at offset 2
+1902 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 8, value Person(id=8, name=Person_8), at offset 4
+1903 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 10,  Person(id=10, name=Person_10), has been set to partition 3, offset 3 in 213 ms
+1903 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 10,  Person(id=10, name=Person_10), has been set to partition 3, offset 2 in 213 ms
+1903 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 8,  Person(id=8, name=Person_8), has been set to partition 1, offset 5 in 420 ms
+1903 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 8,  Person(id=8, name=Person_8), has been set to partition 1, offset 4 in 420 ms
+1904 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 9,  Person(id=9, name=Person_9), has been set to partition 0, offset 2 in 320 ms
+1903 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 9,  Person(id=9, name=Person_9), has been set to partition 0, offset 3 in 319 ms
+1904 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 10, value Person(id=10, name=Person_10), at offset 2
+1905 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 8, value Person(id=8, name=Person_8), at offset 5
+1905 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 9, value Person(id=9, name=Person_9), at offset 3
+1907 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 10, value Person(id=10, name=Person_10), at offset 3
+2005 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 12,  Person(id=12, name=Person_12), has been set to partition 0, offset 5 in 109 ms
+2006 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 12,  Person(id=12, name=Person_12), has been set to partition 0, offset 4 in 110 ms
+2007 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 12, value Person(id=12, name=Person_12), at offset 4
+2009 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 12, value Person(id=12, name=Person_12), at offset 5
+2527 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 17, value Person(id=17, name=Person_17), at offset 4
+2527 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 13, value Person(id=13, name=Person_13), at offset 6
+2529 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 14,  Person(id=14, name=Person_14), has been set to partition 3, offset 5 in 425 ms
+2529 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 17,  Person(id=17, name=Person_17), has been set to partition 2, offset 4 in 111 ms
+2529 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 14,  Person(id=14, name=Person_14), has been set to partition 3, offset 4 in 425 ms
+2529 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 16,  Person(id=16, name=Person_16), has been set to partition 1, offset 6 in 215 ms
+2530 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 17,  Person(id=17, name=Person_17), has been set to partition 2, offset 5 in 112 ms
+2530 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 13,  Person(id=13, name=Person_13), has been set to partition 0, offset 6 in 528 ms
+2530 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 16,  Person(id=16, name=Person_16), has been set to partition 1, offset 7 in 216 ms
+2530 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 13,  Person(id=13, name=Person_13), has been set to partition 0, offset 7 in 528 ms
+2530 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 17, value Person(id=17, name=Person_17), at offset 5
+2530 [pool-2-thread-1]  INFO p.x.k.a.c.PersonConsumer - Received message: key 13, value Person(id=13, name=Person_13), at offset 7
+2530 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 14, value Person(id=14, name=Person_14), at offset 4
+2530 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 16, value Person(id=16, name=Person_16), at offset 6
+2533 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 14, value Person(id=14, name=Person_14), at offset 5
+2533 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 16, value Person(id=16, name=Person_16), at offset 7
+2946 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 21, value Person(id=21, name=Person_21), at offset 6
+2946 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 20, value Person(id=20, name=Person_20), at offset 8
+2947 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 18,  Person(id=18, name=Person_18), has been set to partition 3, offset 7 in 426 ms
+2947 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 21,  Person(id=21, name=Person_21), has been set to partition 2, offset 7 in 112 ms
+2947 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 20,  Person(id=20, name=Person_20), has been set to partition 1, offset 9 in 216 ms
+2947 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 18,  Person(id=18, name=Person_18), has been set to partition 3, offset 6 in 426 ms
+2948 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 21,  Person(id=21, name=Person_21), has been set to partition 2, offset 6 in 113 ms
+2948 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 20,  Person(id=20, name=Person_20), has been set to partition 1, offset 8 in 217 ms
+2948 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 18, value Person(id=18, name=Person_18), at offset 6
+2948 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 20, value Person(id=20, name=Person_20), at offset 9
+2949 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 21, value Person(id=21, name=Person_21), at offset 7
+2951 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 18, value Person(id=18, name=Person_18), at offset 7
+3360 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 24, value Person(id=24, name=Person_24), at offset 10
+3361 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 22,  Person(id=22, name=Person_22), has been set to partition 3, offset 9 in 420 ms
+3361 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 25,  Person(id=25, name=Person_25), has been set to partition 2, offset 9 in 107 ms
+3361 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 24,  Person(id=24, name=Person_24), has been set to partition 1, offset 11 in 212 ms
+3360 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 25, value Person(id=25, name=Person_25), at offset 8
+3361 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 22,  Person(id=22, name=Person_22), has been set to partition 3, offset 8 in 420 ms
+3361 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 25,  Person(id=25, name=Person_25), has been set to partition 2, offset 8 in 107 ms
+3361 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 24,  Person(id=24, name=Person_24), has been set to partition 1, offset 10 in 212 ms
+3362 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 22, value Person(id=22, name=Person_22), at offset 8
+3363 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 25, value Person(id=25, name=Person_25), at offset 9
+3363 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 24, value Person(id=24, name=Person_24), at offset 11
+3365 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 22, value Person(id=22, name=Person_22), at offset 9
+3779 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 29, value Person(id=29, name=Person_29), at offset 10
+3779 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 28, value Person(id=28, name=Person_28), at offset 12
+3779 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 26,  Person(id=26, name=Person_26), has been set to partition 3, offset 11 in 424 ms
+3779 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 29,  Person(id=29, name=Person_29), has been set to partition 2, offset 11 in 111 ms
+3780 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 28,  Person(id=28, name=Person_28), has been set to partition 1, offset 13 in 217 ms
+3780 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 26,  Person(id=26, name=Person_26), has been set to partition 3, offset 10 in 425 ms
+3780 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 29,  Person(id=29, name=Person_29), has been set to partition 2, offset 10 in 112 ms
+3780 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 28,  Person(id=28, name=Person_28), has been set to partition 1, offset 12 in 217 ms
+3780 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 26, value Person(id=26, name=Person_26), at offset 10
+3781 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 29, value Person(id=29, name=Person_29), at offset 11
+3781 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 28, value Person(id=28, name=Person_28), at offset 13
+3783 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 26, value Person(id=26, name=Person_26), at offset 11
+4189 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 33, value Person(id=33, name=Person_33), at offset 12
+4190 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 32, value Person(id=32, name=Person_32), at offset 14
+4191 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 30,  Person(id=30, name=Person_30), has been set to partition 3, offset 12 in 419 ms
+4191 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 33,  Person(id=33, name=Person_33), has been set to partition 2, offset 12 in 110 ms
+4191 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 32,  Person(id=32, name=Person_32), has been set to partition 1, offset 14 in 216 ms
+4191 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 30, value Person(id=30, name=Person_30), at offset 12
+4194 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 33, value Person(id=33, name=Person_33), at offset 13
+4195 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 32, value Person(id=32, name=Person_32), at offset 15
+4196 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 30,  Person(id=30, name=Person_30), has been set to partition 3, offset 13 in 424 ms
+4196 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 33,  Person(id=33, name=Person_33), has been set to partition 2, offset 13 in 110 ms
+4196 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 32,  Person(id=32, name=Person_32), has been set to partition 1, offset 15 in 215 ms
+4196 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 30, value Person(id=30, name=Person_30), at offset 13
+4601 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 37, value Person(id=37, name=Person_37), at offset 14
+4601 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 36, value Person(id=36, name=Person_36), at offset 16
+4602 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 34,  Person(id=34, name=Person_34), has been set to partition 3, offset 15 in 418 ms
+4602 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 37,  Person(id=37, name=Person_37), has been set to partition 2, offset 14 in 107 ms
+4602 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 34,  Person(id=34, name=Person_34), has been set to partition 3, offset 14 in 412 ms
+4602 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 36,  Person(id=36, name=Person_36), has been set to partition 1, offset 17 in 211 ms
+4602 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 37,  Person(id=37, name=Person_37), has been set to partition 2, offset 15 in 106 ms
+4602 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 36,  Person(id=36, name=Person_36), has been set to partition 1, offset 16 in 207 ms
+4603 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 34, value Person(id=34, name=Person_34), at offset 14
+4604 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 37, value Person(id=37, name=Person_37), at offset 15
+4604 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 36, value Person(id=36, name=Person_36), at offset 17
+4605 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 34, value Person(id=34, name=Person_34), at offset 15
+5015 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 40, value Person(id=40, name=Person_40), at offset 18
+5015 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 41, value Person(id=41, name=Person_41), at offset 16
+5016 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 38,  Person(id=38, name=Person_38), has been set to partition 3, offset 17 in 420 ms
+5016 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 41,  Person(id=41, name=Person_41), has been set to partition 2, offset 17 in 111 ms
+5016 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 40,  Person(id=40, name=Person_40), has been set to partition 1, offset 19 in 214 ms
+5017 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 38,  Person(id=38, name=Person_38), has been set to partition 3, offset 16 in 421 ms
+5017 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 41,  Person(id=41, name=Person_41), has been set to partition 2, offset 16 in 112 ms
+5017 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 40,  Person(id=40, name=Person_40), has been set to partition 1, offset 18 in 215 ms
+5018 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 40, value Person(id=40, name=Person_40), at offset 19
+5018 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 41, value Person(id=41, name=Person_41), at offset 17
+5018 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 38, value Person(id=38, name=Person_38), at offset 16
+5020 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 38, value Person(id=38, name=Person_38), at offset 17
+5426 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 45, value Person(id=45, name=Person_45), at offset 18
+5426 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 44, value Person(id=44, name=Person_44), at offset 20
+5427 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 42,  Person(id=42, name=Person_42), has been set to partition 3, offset 19 in 417 ms
+5427 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 45,  Person(id=45, name=Person_45), has been set to partition 2, offset 19 in 109 ms
+5427 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 44,  Person(id=44, name=Person_44), has been set to partition 1, offset 21 in 213 ms
+5427 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 42,  Person(id=42, name=Person_42), has been set to partition 3, offset 18 in 417 ms
+5428 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 45,  Person(id=45, name=Person_45), has been set to partition 2, offset 18 in 110 ms
+5428 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 44,  Person(id=44, name=Person_44), has been set to partition 1, offset 20 in 214 ms
+5428 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 42, value Person(id=42, name=Person_42), at offset 18
+5429 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 44, value Person(id=44, name=Person_44), at offset 21
+5429 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 45, value Person(id=45, name=Person_45), at offset 19
+5431 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 42, value Person(id=42, name=Person_42), at offset 19
+5844 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 49, value Person(id=49, name=Person_49), at offset 20
+5846 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 49, value Person(id=49, name=Person_49), at offset 21
+5849 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 46,  Person(id=46, name=Person_46), has been set to partition 3, offset 21 in 428 ms
+5849 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 46,  Person(id=46, name=Person_46), has been set to partition 3, offset 20 in 428 ms
+5849 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 49,  Person(id=49, name=Person_49), has been set to partition 2, offset 21 in 113 ms
+5850 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 49,  Person(id=49, name=Person_49), has been set to partition 2, offset 20 in 113 ms
+5850 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 48,  Person(id=48, name=Person_48), has been set to partition 1, offset 23 in 219 ms
+5850 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 48,  Person(id=48, name=Person_48), has been set to partition 1, offset 22 in 219 ms
+5850 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 48, value Person(id=48, name=Person_48), at offset 22
+5850 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 46, value Person(id=46, name=Person_46), at offset 20
+5852 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 46, value Person(id=46, name=Person_46), at offset 21
+5852 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 48, value Person(id=48, name=Person_48), at offset 23
+6260 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 53, value Person(id=53, name=Person_53), at offset 22
+6260 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 50,  Person(id=50, name=Person_50), has been set to partition 3, offset 23 in 419 ms
+6260 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 52, value Person(id=52, name=Person_52), at offset 24
+6260 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 53,  Person(id=53, name=Person_53), has been set to partition 2, offset 22 in 108 ms
+6260 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 52,  Person(id=52, name=Person_52), has been set to partition 1, offset 25 in 211 ms
+6261 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 50,  Person(id=50, name=Person_50), has been set to partition 3, offset 22 in 420 ms
+6261 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 50, value Person(id=50, name=Person_50), at offset 22
+6261 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 53,  Person(id=53, name=Person_53), has been set to partition 2, offset 23 in 109 ms
+6261 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 52,  Person(id=52, name=Person_52), has been set to partition 1, offset 24 in 212 ms
+6262 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 52, value Person(id=52, name=Person_52), at offset 25
+6262 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 53, value Person(id=53, name=Person_53), at offset 23
+6263 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 50, value Person(id=50, name=Person_50), at offset 23
+6676 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 56, value Person(id=56, name=Person_56), at offset 26
+6676 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 57, value Person(id=57, name=Person_57), at offset 24
+6676 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 54,  Person(id=54, name=Person_54), has been set to partition 3, offset 25 in 421 ms
+6676 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 57,  Person(id=57, name=Person_57), has been set to partition 2, offset 25 in 108 ms
+6677 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 54,  Person(id=54, name=Person_54), has been set to partition 3, offset 24 in 422 ms
+6677 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 56,  Person(id=56, name=Person_56), has been set to partition 1, offset 27 in 214 ms
+6677 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 57,  Person(id=57, name=Person_57), has been set to partition 2, offset 24 in 109 ms
+6677 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 56,  Person(id=56, name=Person_56), has been set to partition 1, offset 26 in 214 ms
+6677 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 54, value Person(id=54, name=Person_54), at offset 24
+6678 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 57, value Person(id=57, name=Person_57), at offset 25
+6678 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 56, value Person(id=56, name=Person_56), at offset 27
+6679 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 54, value Person(id=54, name=Person_54), at offset 25
+7093 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 60, value Person(id=60, name=Person_60), at offset 28
+7093 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 61, value Person(id=61, name=Person_61), at offset 26
+7094 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 58,  Person(id=58, name=Person_58), has been set to partition 3, offset 27 in 422 ms
+7094 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 58,  Person(id=58, name=Person_58), has been set to partition 3, offset 26 in 422 ms
+7094 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 61,  Person(id=61, name=Person_61), has been set to partition 2, offset 26 in 111 ms
+7094 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 61,  Person(id=61, name=Person_61), has been set to partition 2, offset 27 in 111 ms
+7094 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 60,  Person(id=60, name=Person_60), has been set to partition 1, offset 29 in 214 ms
+7094 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 60,  Person(id=60, name=Person_60), has been set to partition 1, offset 28 in 214 ms
+7094 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 58, value Person(id=58, name=Person_58), at offset 26
+7095 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 61, value Person(id=61, name=Person_61), at offset 27
+7095 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 60, value Person(id=60, name=Person_60), at offset 29
+7096 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 58, value Person(id=58, name=Person_58), at offset 27
+7506 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 65, value Person(id=65, name=Person_65), at offset 28
+7506 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 64, value Person(id=64, name=Person_64), at offset 30
+7507 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 62,  Person(id=62, name=Person_62), has been set to partition 3, offset 29 in 418 ms
+7507 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 65,  Person(id=65, name=Person_65), has been set to partition 2, offset 28 in 105 ms
+7507 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 64,  Person(id=64, name=Person_64), has been set to partition 1, offset 31 in 209 ms
+7507 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 62,  Person(id=62, name=Person_62), has been set to partition 3, offset 28 in 418 ms
+7507 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 65,  Person(id=65, name=Person_65), has been set to partition 2, offset 29 in 105 ms
+7507 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 64,  Person(id=64, name=Person_64), has been set to partition 1, offset 30 in 209 ms
+7508 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 62, value Person(id=62, name=Person_62), at offset 28
+7508 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 65, value Person(id=65, name=Person_65), at offset 29
+7508 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 64, value Person(id=64, name=Person_64), at offset 31
+7510 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 62, value Person(id=62, name=Person_62), at offset 29
+7919 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 69, value Person(id=69, name=Person_69), at offset 30
+7919 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 68, value Person(id=68, name=Person_68), at offset 32
+7919 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 66,  Person(id=66, name=Person_66), has been set to partition 3, offset 31 in 417 ms
+7919 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 69,  Person(id=69, name=Person_69), has been set to partition 2, offset 30 in 107 ms
+7919 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 68,  Person(id=68, name=Person_68), has been set to partition 1, offset 33 in 209 ms
+7920 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 66,  Person(id=66, name=Person_66), has been set to partition 3, offset 30 in 418 ms
+7920 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 69,  Person(id=69, name=Person_69), has been set to partition 2, offset 31 in 108 ms
+7920 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 68,  Person(id=68, name=Person_68), has been set to partition 1, offset 32 in 210 ms
+7920 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 66, value Person(id=66, name=Person_66), at offset 30
+7921 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 69, value Person(id=69, name=Person_69), at offset 31
+7921 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 68, value Person(id=68, name=Person_68), at offset 33
+7922 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 66, value Person(id=66, name=Person_66), at offset 31
+8335 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 73, value Person(id=73, name=Person_73), at offset 32
+8335 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 72, value Person(id=72, name=Person_72), at offset 34
+8335 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 70,  Person(id=70, name=Person_70), has been set to partition 3, offset 33 in 420 ms
+8336 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 73,  Person(id=73, name=Person_73), has been set to partition 2, offset 32 in 110 ms
+8336 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 70,  Person(id=70, name=Person_70), has been set to partition 3, offset 32 in 421 ms
+8336 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 72,  Person(id=72, name=Person_72), has been set to partition 1, offset 35 in 211 ms
+8336 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 73,  Person(id=73, name=Person_73), has been set to partition 2, offset 33 in 110 ms
+8336 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 72,  Person(id=72, name=Person_72), has been set to partition 1, offset 34 in 211 ms
+8336 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 70, value Person(id=70, name=Person_70), at offset 32
+8337 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 73, value Person(id=73, name=Person_73), at offset 33
+8337 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 72, value Person(id=72, name=Person_72), at offset 35
+8339 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 70, value Person(id=70, name=Person_70), at offset 33
+8749 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 74,  Person(id=74, name=Person_74), has been set to partition 3, offset 35 in 418 ms
+8749 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 77, value Person(id=77, name=Person_77), at offset 34
+8749 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 76, value Person(id=76, name=Person_76), at offset 36
+8749 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 77,  Person(id=77, name=Person_77), has been set to partition 2, offset 34 in 107 ms
+8750 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 76,  Person(id=76, name=Person_76), has been set to partition 1, offset 37 in 213 ms
+8750 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 74,  Person(id=74, name=Person_74), has been set to partition 3, offset 34 in 419 ms
+8750 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 77,  Person(id=77, name=Person_77), has been set to partition 2, offset 35 in 108 ms
+8750 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 74, value Person(id=74, name=Person_74), at offset 34
+8750 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 76,  Person(id=76, name=Person_76), has been set to partition 1, offset 36 in 213 ms
+8752 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 76, value Person(id=76, name=Person_76), at offset 37
+8752 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 77, value Person(id=77, name=Person_77), at offset 35
+8752 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 74, value Person(id=74, name=Person_74), at offset 35
+9162 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 81, value Person(id=81, name=Person_81), at offset 36
+9163 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 78,  Person(id=78, name=Person_78), has been set to partition 3, offset 36 in 418 ms
+9163 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 78,  Person(id=78, name=Person_78), has been set to partition 3, offset 37 in 418 ms
+9163 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 81,  Person(id=81, name=Person_81), has been set to partition 2, offset 36 in 106 ms
+9163 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 81,  Person(id=81, name=Person_81), has been set to partition 2, offset 37 in 106 ms
+9163 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 80,  Person(id=80, name=Person_80), has been set to partition 1, offset 39 in 207 ms
+9163 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 80,  Person(id=80, name=Person_80), has been set to partition 1, offset 38 in 207 ms
+9163 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 80, value Person(id=80, name=Person_80), at offset 38
+9163 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 78, value Person(id=78, name=Person_78), at offset 36
+9164 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 81, value Person(id=81, name=Person_81), at offset 37
+9165 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 80, value Person(id=80, name=Person_80), at offset 39
+9165 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 78, value Person(id=78, name=Person_78), at offset 37
+9576 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 84, value Person(id=84, name=Person_84), at offset 40
+9576 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 85, value Person(id=85, name=Person_85), at offset 38
+9576 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 82,  Person(id=82, name=Person_82), has been set to partition 3, offset 39 in 418 ms
+9577 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 85,  Person(id=85, name=Person_85), has been set to partition 2, offset 38 in 109 ms
+9577 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 84,  Person(id=84, name=Person_84), has been set to partition 1, offset 41 in 214 ms
+9577 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 82, value Person(id=82, name=Person_82), at offset 38
+9578 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 82,  Person(id=82, name=Person_82), has been set to partition 3, offset 38 in 420 ms
+9578 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 85,  Person(id=85, name=Person_85), has been set to partition 2, offset 39 in 110 ms
+9579 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 84,  Person(id=84, name=Person_84), has been set to partition 1, offset 40 in 216 ms
+9579 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 84, value Person(id=84, name=Person_84), at offset 41
+9579 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 85, value Person(id=85, name=Person_85), at offset 39
+9580 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 82, value Person(id=82, name=Person_82), at offset 39
+9992 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 89, value Person(id=89, name=Person_89), at offset 40
+9992 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 88, value Person(id=88, name=Person_88), at offset 42
+9992 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 86,  Person(id=86, name=Person_86), has been set to partition 3, offset 41 in 420 ms
+9992 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 89,  Person(id=89, name=Person_89), has been set to partition 2, offset 40 in 108 ms
+9992 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 88,  Person(id=88, name=Person_88), has been set to partition 1, offset 43 in 212 ms
+9993 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 86,  Person(id=86, name=Person_86), has been set to partition 3, offset 40 in 421 ms
+9993 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 89,  Person(id=89, name=Person_89), has been set to partition 2, offset 41 in 109 ms
+9993 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 88,  Person(id=88, name=Person_88), has been set to partition 1, offset 42 in 213 ms
+9993 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 86, value Person(id=86, name=Person_86), at offset 40
+9995 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 86, value Person(id=86, name=Person_86), at offset 41
+9995 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 89, value Person(id=89, name=Person_89), at offset 41
+9995 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 88, value Person(id=88, name=Person_88), at offset 43
+10409 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 93, value Person(id=93, name=Person_93), at offset 42
+10409 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 92, value Person(id=92, name=Person_92), at offset 44
+10409 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 90,  Person(id=90, name=Person_90), has been set to partition 3, offset 43 in 420 ms
+10409 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 93,  Person(id=93, name=Person_93), has been set to partition 2, offset 43 in 109 ms
+10410 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 92,  Person(id=92, name=Person_92), has been set to partition 1, offset 45 in 214 ms
+10410 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 90,  Person(id=90, name=Person_90), has been set to partition 3, offset 42 in 421 ms
+10410 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 93,  Person(id=93, name=Person_93), has been set to partition 2, offset 42 in 110 ms
+10410 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 92,  Person(id=92, name=Person_92), has been set to partition 1, offset 44 in 214 ms
+10410 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 90, value Person(id=90, name=Person_90), at offset 42
+10411 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 93, value Person(id=93, name=Person_93), at offset 43
+10411 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 92, value Person(id=92, name=Person_92), at offset 45
+10412 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 90, value Person(id=90, name=Person_90), at offset 43
+10817 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 97, value Person(id=97, name=Person_97), at offset 44
+10817 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 94,  Person(id=94, name=Person_94), has been set to partition 3, offset 44 in 412 ms
+10817 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 97,  Person(id=97, name=Person_97), has been set to partition 2, offset 45 in 106 ms
+10817 [kafka-producer-network-thread | 0]  INFO p.x.k.a.p.PersonProducer - Message No: 96,  Person(id=96, name=Person_96), has been set to partition 1, offset 46 in 209 ms
+10817 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 96, value Person(id=96, name=Person_96), at offset 46
+10818 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 94,  Person(id=94, name=Person_94), has been set to partition 3, offset 45 in 413 ms
+10818 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 97,  Person(id=97, name=Person_97), has been set to partition 2, offset 44 in 107 ms
+10818 [kafka-producer-network-thread | 1]  INFO p.x.k.a.p.PersonProducer - Message No: 96,  Person(id=96, name=Person_96), has been set to partition 1, offset 47 in 210 ms
+10818 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 94, value Person(id=94, name=Person_94), at offset 44
+10818 [pool-2-thread-2]  INFO p.x.k.a.c.PersonConsumer - Received message: key 96, value Person(id=96, name=Person_96), at offset 47
+10818 [pool-2-thread-3]  INFO p.x.k.a.c.PersonConsumer - Received message: key 97, value Person(id=97, name=Person_97), at offset 45
+10819 [pool-2-thread-4]  INFO p.x.k.a.c.PersonConsumer - Received message: key 94, value Person(id=94, name=Person_94), at offset 45
+
+Process finished with exit code 130 (interrupted by signal 2: SIGINT)
