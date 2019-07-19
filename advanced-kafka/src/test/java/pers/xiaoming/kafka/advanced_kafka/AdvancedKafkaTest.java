@@ -29,7 +29,7 @@ public class AdvancedKafkaTest {
         PersonConsumerManager consumerManager = new PersonConsumerManager("consumer.properties", numOfConsumer);
         consumerManager.startAll();
 
-        producerExecutor.awaitTermination(30, TimeUnit.SECONDS);
+        producerExecutor.awaitTermination(10, TimeUnit.SECONDS);
         consumerManager.stopAll();
     }
 }
