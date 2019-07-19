@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka;
+package pers.xiaoming.kafka.advanced_kafka.producer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerInterceptor;

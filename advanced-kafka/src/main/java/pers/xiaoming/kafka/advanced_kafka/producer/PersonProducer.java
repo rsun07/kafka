@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka;
+package pers.xiaoming.kafka.advanced_kafka.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -6,6 +6,7 @@ import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
+import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
 import pers.xiaoming.kafka.advanced_kafka.models.Person;
 
 import java.io.IOException;
@@ -14,12 +15,12 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
-public class Producer extends Thread implements AutoCloseable {
+public class PersonProducer extends Thread implements AutoCloseable {
     private final KafkaProducer<Integer, Person> producer;
     private final String topic;
     private final AtomicInteger no;
 
-    public Producer(String propertyFileName) throws IOException {
+    public PersonProducer(String propertyFileName) throws IOException {
         this.no = new AtomicInteger(0);
 
         Properties properties = PropertyUtils.loadProperties(propertyFileName);

@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka;
+package pers.xiaoming.kafka.advanced_kafka.producer;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
