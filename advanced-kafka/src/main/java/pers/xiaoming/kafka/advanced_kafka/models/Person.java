@@ -10,6 +10,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Person implements Serializable {
-    private String name;
+    private int id;
+    private String firstName;
+    private String lastName;
     private int age;
 }
