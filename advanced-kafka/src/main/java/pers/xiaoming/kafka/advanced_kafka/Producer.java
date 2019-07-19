@@ -7,11 +7,13 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class Producer extends Thread {
+public class Producer extends Thread implements AutoCloseable {
     private final KafkaProducer<Integer, String> producer;
     private final String topic;
     private final boolean isAsync;
@@ -51,6 +53,14 @@ public class Producer extends Thread {
             }
 
             messageNo++;
+        }
+    }
+
+    @Override
+    public void close() throws Exception {
+        if (producer != null) {
+            producer.flush();
+            producer.close(Duration.ofMillis(10_000));
         }
     }
 
