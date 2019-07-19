@@ -1,5 +1,6 @@
 package pers.xiaoming.kafka.advanced_kafka;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -30,7 +31,7 @@ public class Producer extends Thread implements AutoCloseable {
     public void run() {
         while (true) {
             int id = no.getAndIncrement();
-            Person person = new Person(id, "Person");
+            Person person = new Person(id, "Person_" + id);
             long startTime = System.currentTimeMillis();
             producer.send(new ProducerRecord<>(topic, id, person),
                     new MyCallBack(startTime, id, person));
@@ -51,22 +52,24 @@ public class Producer extends Thread implements AutoCloseable {
         }
     }
 
+    @RequiredArgsConstructor
     private class MyCallBack implements Callback {
         private final long startTime;
         private final int key;
-        private final Person message;
-
-        MyCallBack(long startTime, int key, Person message) {
-            this.startTime = startTime;
-            this.key = key;
-            this.message = message;
-        }
+        private final Person person;
 
         @Override
         public void onCompletion(RecordMetadata metadata, Exception exception) {
             long elapsedTime = System.currentTimeMillis() - startTime;
-            log.info("Message No: {},  {}, has been set to partition {}, offset {} in {} ms",
-                    key, message, metadata.partition(), metadata.offset(), elapsedTime);
+
+            if (metadata == null && exception != null) {
+                log.error("Failed to send message: Message No: {},  {} in {} ms. Exception {}", key, person.toString(), elapsedTime, exception);
+            }
+
+            if (metadata != null) {
+                log.info("Message No: {},  {}, has been set to partition {}, offset {} in {} ms",
+                        key, person.toString(), metadata.partition(), metadata.offset(), elapsedTime);
+            }
         }
     }
 }
