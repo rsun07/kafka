@@ -10,6 +10,7 @@
 
   <modules>
     <module>helloworld-kafka</module>
+    <module>advanced-kafka</module>
   </modules>
 
   <properties>

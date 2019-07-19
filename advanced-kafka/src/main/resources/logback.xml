@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <!--output to console, used in this module's tests-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %-4r [%t] %5p %c{1} - %m%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- Send logs to both console and file audit -->
+    <logger name="pers.xiaoming.kafka" level="info" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
