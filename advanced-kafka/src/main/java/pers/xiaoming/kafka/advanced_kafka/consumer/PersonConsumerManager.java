@@ -1,5 +1,6 @@
 package pers.xiaoming.kafka.advanced_kafka.consumer;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
 
 import java.io.IOException;
@@ -8,11 +9,13 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PersonConsumerManager {
     private final Properties properties;
     private final String topic;
     private final int numOfPartition;
+    private final AtomicInteger clientIdGenerator;
 
     private Set<PersonConsumer> consumers;
 
@@ -21,6 +24,8 @@ public class PersonConsumerManager {
 
         this.properties = PropertyUtils.loadProperties(propertyFileName);
         this.topic = properties.getProperty("topic");
+
+        this.clientIdGenerator = new AtomicInteger(0);
     }
 
     public void startAll() {
@@ -28,6 +33,9 @@ public class PersonConsumerManager {
         consumers = new HashSet<>();
 
         for (int i = 0; i < numOfPartition; i++) {
+            String clientId = String.valueOf(clientIdGenerator.getAndIncrement());
+            properties.put(ConsumerConfig.CLIENT_ID_CONFIG, clientId);
+
             PersonConsumer consumer = new PersonConsumer(topic, properties);
             executor.execute(consumer);
             consumers.add(consumer);

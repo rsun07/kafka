@@ -20,10 +20,9 @@ public class PersonProducer extends Thread implements AutoCloseable {
     private final String topic;
     private final AtomicInteger no;
 
-    public PersonProducer(String propertyFileName) throws IOException {
+    public PersonProducer(Properties properties) throws IOException {
         this.no = new AtomicInteger(0);
 
-        Properties properties = PropertyUtils.loadProperties(propertyFileName);
         this.topic = properties.getProperty("topic");
         this.producer = new KafkaProducer<>(properties);
     }
