@@ -16,32 +16,53 @@ import java.time.Duration;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 public class PersonConsumer extends Thread implements Closeable {
     private final KafkaConsumer<Integer, String> consumer;
     private final String topic;
+    private final AtomicBoolean shouldRun;
+    private CountDownLatch stopLatch;
 
     public PersonConsumer(String topic, Properties properties) {
         this.topic = topic;
         this.consumer = new KafkaConsumer<>(properties);
+        this.shouldRun = new AtomicBoolean(false);
     }
 
     @Override
     public void run() {
+        shouldRun.set(true);
+        stopLatch = new CountDownLatch(1);
         consumer.subscribe(Collections.singletonList(this.topic), new MyConsumerRebalanceListener(topic));
-        while (true) {
+        log.info("Subscribe into topic {}, partitions {}", topic, consumer.assignment().toString());
+
+        while (shouldRun.get()) {
             ConsumerRecords<Integer, String> records = consumer.poll(Duration.ofSeconds(1));
             for (ConsumerRecord<Integer, String> record : records) {
                 log.info("Received message: key {}, value {}, at offset {}",
                         record.key(), record.value(), record.offset());
             }
         }
+
+        stopLatch.countDown();
     }
 
     @Override
     public void close() throws IOException {
-        consumer.close();
+        shouldRun.set(false);
+
+        try {
+            stopLatch.await();
+        } catch (InterruptedException e) {
+            log.error(e.getMessage());
+        }
+
+        if (consumer != null) {
+            consumer.close();
+        }
     }
 
     @RequiredArgsConstructor
