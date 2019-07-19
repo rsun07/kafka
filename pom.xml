@@ -9,7 +9,7 @@
   <name>kafka</name>
 
   <modules>
-    <module>basic-kafka</module>
+    <module>helloworld-kafka</module>
   </modules>
 
   <properties>
