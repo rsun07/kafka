@@ -2,11 +2,19 @@ package pers.xiaoming.kafka.advanced_kafka.models;
 
 import org.apache.kafka.common.serialization.Serializer;
 
-import java.nio.charset.StandardCharsets;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class PersonSerializer implements Serializer<Person> {
     @Override
     public byte[] serialize(String topic, Person data) {
-        return data.toString().getBytes(StandardCharsets.UTF_8);
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(bos)) {
+            oos.writeObject(data);
+            return bos.toByteArray();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
