@@ -16,9 +16,9 @@ public class Consumer extends Thread implements Closeable {
     private final KafkaConsumer<Integer, String> consumer;
     private final String topic;
 
-    public Consumer() throws IOException {
+    public Consumer(String propertyFileName) throws IOException {
 
-        Properties properties = PropertyUtils.loadProperties("consumer.properties");
+        Properties properties = PropertyUtils.loadProperties(propertyFileName);
 
         this.topic = properties.getProperty("topic");
         this.consumer = new KafkaConsumer<>(properties);

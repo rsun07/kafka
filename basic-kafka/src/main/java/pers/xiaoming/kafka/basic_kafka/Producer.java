@@ -16,10 +16,10 @@ public class Producer extends Thread {
     private final String topic;
     private final boolean isAsync;
 
-    public Producer(boolean isAsync) throws IOException {
+    public Producer(String propertyFileName, boolean isAsync) throws IOException {
         this.isAsync = isAsync;
 
-        Properties properties = PropertyUtils.loadProperties("producer.properties");
+        Properties properties = PropertyUtils.loadProperties(propertyFileName);
         this.topic = properties.getProperty("topic");
         this.producer = new KafkaProducer<>(properties);
     }
