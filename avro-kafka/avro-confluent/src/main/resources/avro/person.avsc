@@ -1,7 +1,8 @@
 {
-    "namespace":"pers.xiaoming.kafka.avro-confluent.models",
+    "namespace":"pers.xiaoming.kafka.avro_confluent.model",
     "type":"record",
     "name":"Person",
+    "version":"1",
     "fields": [
         {"name":"id", "type": "int", "doc":"person's id"},
         {"name":"name", "type":"string", "doc":"person's name, may be nick name"}
