@@ -25,6 +25,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>pers.xiaoming.kafka</groupId>
+            <artifactId>advanced-kafka</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>

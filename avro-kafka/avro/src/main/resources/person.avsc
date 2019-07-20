@@ -1,5 +1,5 @@
 {
-    "namespace":"pers.xiaoming.kafka.avro.models",
+    "namespace":"pers.xiaoming.kafka.avro.model",
     "type":"record",
     "name":"Person",
     "fields": [

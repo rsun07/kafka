@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.avro.models;
+package pers.xiaoming.kafka.avro.model;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.io.BinaryDecoder;
