@@ -11,6 +11,7 @@
   <modules>
     <module>helloworld-kafka</module>
     <module>advanced-kafka</module>
+    <module>avro-kafka</module>
   </modules>
 
   <properties>
