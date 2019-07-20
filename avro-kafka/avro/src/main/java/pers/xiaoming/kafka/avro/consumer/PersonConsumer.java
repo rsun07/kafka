@@ -7,6 +7,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
+import pers.xiaoming.kafka.avro.models.Person;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 public class PersonConsumer extends Thread implements Closeable {
-    private final KafkaConsumer<Integer, String> consumer;
+    private final KafkaConsumer<Integer, Person> consumer;
     private final String topic;
     private final AtomicBoolean shouldRun;
     private CountDownLatch stopLatch;
@@ -38,8 +39,8 @@ public class PersonConsumer extends Thread implements Closeable {
         log.info("Subscribe into topic {}, partitions {}", topic, consumer.assignment().toString());
 
         while (shouldRun.get()) {
-            ConsumerRecords<Integer, String> records = consumer.poll(Duration.ofSeconds(1));
-            for (ConsumerRecord<Integer, String> record : records) {
+            ConsumerRecords<Integer, Person> records = consumer.poll(Duration.ofSeconds(1));
+            for (ConsumerRecord<Integer, Person> record : records) {
                 log.info("Received message: key {}, value {}, at offset {}",
                         record.key(), record.value(), record.offset());
             }

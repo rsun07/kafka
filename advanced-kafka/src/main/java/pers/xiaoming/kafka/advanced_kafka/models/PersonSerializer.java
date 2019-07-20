@@ -1,5 +1,6 @@
 package pers.xiaoming.kafka.advanced_kafka.models;
 
+import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;
 
 import java.io.ByteArrayOutputStream;
@@ -14,7 +15,7 @@ public class PersonSerializer implements Serializer<Person> {
             oos.writeObject(data);
             return bos.toByteArray();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new SerializationException(e);
         }
     }
 }

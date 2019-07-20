@@ -47,7 +47,7 @@ public class PersonProducer extends Thread implements AutoCloseable {
     public void close() throws Exception {
         if (producer != null) {
             producer.flush();
-            producer.close(Duration.ofMillis(10_000));
+            producer.close(Duration.ofMillis(5_000));
         }
     }
 

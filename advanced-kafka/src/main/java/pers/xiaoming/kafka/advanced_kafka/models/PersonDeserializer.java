@@ -1,5 +1,6 @@
 package pers.xiaoming.kafka.advanced_kafka.models;
 
+import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Deserializer;
 
 import java.io.ByteArrayInputStream;
@@ -13,7 +14,7 @@ public class PersonDeserializer implements Deserializer<Person> {
              ObjectInputStream ois = new ObjectInputStream(bis)) {
             return (Person) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            throw new SerializationException(e);
         }
     }
 }
