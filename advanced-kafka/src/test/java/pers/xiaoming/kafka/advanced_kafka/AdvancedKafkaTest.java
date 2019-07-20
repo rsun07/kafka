@@ -1,6 +1,7 @@
 package pers.xiaoming.kafka.advanced_kafka;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.junit.Ignore;
 import org.junit.Test;
 import pers.xiaoming.kafka.advanced_kafka.consumer.PersonConsumerManager;
 import pers.xiaoming.kafka.advanced_kafka.producer.PersonProducer;
@@ -11,6 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+@Ignore
 public class AdvancedKafkaTest {
     private static final int numOfProducer = 2;
     private static final int numOfConsumer = 4;

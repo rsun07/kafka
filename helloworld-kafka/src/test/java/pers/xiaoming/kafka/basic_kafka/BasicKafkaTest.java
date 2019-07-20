@@ -1,9 +1,11 @@
 package pers.xiaoming.kafka.basic_kafka;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
 
+@Ignore
 public class BasicKafkaTest {
     @Test
     public void testAsync() throws IOException, InterruptedException {

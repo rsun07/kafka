@@ -10,17 +10,28 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <packaging>pom</packaging>
+
     <modules>
         <module>avro</module>
         <module>avro-confluent</module>
     </modules>
     <artifactId>avro-kafka</artifactId>
 
+    <properties>
+        <avro.version>1.8.2</avro.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
         </dependency>
 
         <dependency>

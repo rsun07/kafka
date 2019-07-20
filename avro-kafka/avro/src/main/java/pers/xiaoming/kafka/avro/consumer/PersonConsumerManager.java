@@ -1,7 +1,7 @@
-package pers.xiaoming.kafka.advanced_kafka.consumer;
+package pers.xiaoming.kafka.avro.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
+import pers.xiaoming.kafka.avro.PropertyUtils;
 
 import java.io.IOException;
 import java.util.HashSet;

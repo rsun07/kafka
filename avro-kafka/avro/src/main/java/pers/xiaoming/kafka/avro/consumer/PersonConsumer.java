@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka.consumer;
+package pers.xiaoming.kafka.avro.consumer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,8 +7,6 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
-import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
-import pers.xiaoming.kafka.advanced_kafka.models.Person;
 
 import java.io.Closeable;
 import java.io.IOException;

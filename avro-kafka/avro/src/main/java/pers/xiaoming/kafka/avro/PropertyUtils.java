@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka;
+package pers.xiaoming.kafka.avro;
 
 import java.io.IOException;
 import java.io.InputStream;

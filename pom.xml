@@ -4,7 +4,7 @@
 
   <groupId>pers.xiaoming.kafka</groupId>
   <artifactId>kafka</artifactId>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>kafka</name>
 
