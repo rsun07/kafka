@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka.models;
+package pers.xiaoming.kafka.advanced_kafka.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

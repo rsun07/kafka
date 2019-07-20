@@ -7,8 +7,6 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
-import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
-import pers.xiaoming.kafka.advanced_kafka.models.Person;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -20,13 +18,13 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
-public class PersonConsumer extends Thread implements Closeable {
-    private final KafkaConsumer<Integer, Person> consumer;
+public class GenericConsumer<K, V> extends Thread implements Closeable {
+    private final KafkaConsumer<K, V> consumer;
     private final String topic;
     private final AtomicBoolean shouldRun;
     private CountDownLatch stopLatch;
 
-    public PersonConsumer(String topic, Properties properties) {
+    public GenericConsumer(String topic, Properties properties) {
         this.topic = topic;
         this.consumer = new KafkaConsumer<>(properties);
         this.shouldRun = new AtomicBoolean(false);
@@ -40,8 +38,8 @@ public class PersonConsumer extends Thread implements Closeable {
         log.info("Subscribe into topic {}, partitions {}", topic, consumer.assignment().toString());
 
         while (shouldRun.get()) {
-            ConsumerRecords<Integer, Person> records = consumer.poll(Duration.ofSeconds(1));
-            for (ConsumerRecord<Integer, Person> record : records) {
+            ConsumerRecords<K, V> records = consumer.poll(Duration.ofSeconds(1));
+            for (ConsumerRecord<K, V> record : records) {
                 log.info("Received message: key {}, value {}, at offset {}",
                         record.key(), record.value(), record.offset());
             }

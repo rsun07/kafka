@@ -1,13 +1,13 @@
 package pers.xiaoming.kafka.advanced_kafka.producer;
 
+import javafx.util.Pair;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
-import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
-import pers.xiaoming.kafka.advanced_kafka.models.Person;
+import pers.xiaoming.kafka.advanced_kafka.model.Person;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -15,14 +15,13 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
-public class PersonProducer extends Thread implements AutoCloseable {
-    private final KafkaProducer<Integer, Person> producer;
+public class GenericProducer<K, V> extends Thread implements AutoCloseable {
+    private final KafkaProducer<K, V> producer;
     private final String topic;
-    private final AtomicInteger no;
 
-    public PersonProducer(Properties properties) throws IOException {
-        this.no = new AtomicInteger(0);
+    private ProducerRecordGenerator<K, V> dataGenerator;
 
+    public GenericProducer(Properties properties) throws IOException {
         this.topic = properties.getProperty("topic");
         this.producer = new KafkaProducer<>(properties);
     }
@@ -30,11 +29,10 @@ public class PersonProducer extends Thread implements AutoCloseable {
     @Override
     public void run() {
         while (true) {
-            int id = no.getAndIncrement();
-            Person person = new Person(id, "Person_" + id);
+            Pair<K, V> record = dataGenerator.nextRecord();
             long startTime = System.currentTimeMillis();
-            producer.send(new ProducerRecord<>(topic, id, person),
-                    new MyCallBack(startTime, id, person));
+            producer.send(new ProducerRecord<>(topic, record.getKey(), record.getValue()),
+                    new MyCallBack(startTime, record.getKey(), record.getValue()));
 
             try {
                 Thread.sleep(100);
@@ -55,20 +53,20 @@ public class PersonProducer extends Thread implements AutoCloseable {
     @RequiredArgsConstructor
     private class MyCallBack implements Callback {
         private final long startTime;
-        private final int key;
-        private final Person person;
+        private final K key;
+        private final V value;
 
         @Override
         public void onCompletion(RecordMetadata metadata, Exception exception) {
             long elapsedTime = System.currentTimeMillis() - startTime;
 
             if (metadata == null && exception != null) {
-                log.error("Failed to send message: Message No: {},  {} in {} ms. Exception {}", key, person.toString(), elapsedTime, exception);
+                log.error("Failed to send message: Message No: {},  {} in {} ms. Exception {}", key, value, elapsedTime, exception);
             }
 
             if (metadata != null) {
                 log.info("Message No: {},  {}, has been set to partition {}, offset {} in {} ms",
-                        key, person.toString(), metadata.partition(), metadata.offset(), elapsedTime);
+                        key, value, metadata.partition(), metadata.offset(), elapsedTime);
             }
         }
     }

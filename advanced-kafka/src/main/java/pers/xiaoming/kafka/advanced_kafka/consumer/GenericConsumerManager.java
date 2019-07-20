@@ -11,15 +11,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class PersonConsumerManager {
+public class GenericConsumerManager<K, V> {
     private final Properties properties;
     private final String topic;
     private final int numOfPartition;
     private final AtomicInteger clientIdGenerator;
 
-    private Set<PersonConsumer> consumers;
+    private Set<GenericConsumer<K, V>> consumers;
 
-    public PersonConsumerManager(String propertyFileName, int numOfPartition) throws IOException {
+    public GenericConsumerManager(String propertyFileName, int numOfPartition) throws IOException {
         this.numOfPartition = numOfPartition;
 
         this.properties = PropertyUtils.loadProperties(propertyFileName);
@@ -36,14 +36,14 @@ public class PersonConsumerManager {
             String clientId = String.valueOf(clientIdGenerator.getAndIncrement());
             properties.put(ConsumerConfig.CLIENT_ID_CONFIG, clientId);
 
-            PersonConsumer consumer = new PersonConsumer(topic, properties);
+            GenericConsumer<K, V> consumer = new GenericConsumer<>(topic, properties);
             executor.execute(consumer);
             consumers.add(consumer);
         }
     }
 
     public void stopAll() throws IOException {
-        for (PersonConsumer consumer : consumers) {
+        for (GenericConsumer consumer : consumers) {
             consumer.close();
         }
     }

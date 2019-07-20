@@ -1,4 +1,4 @@
-package pers.xiaoming.kafka.advanced_kafka.models;
+package pers.xiaoming.kafka.advanced_kafka.model;
 
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Deserializer;
