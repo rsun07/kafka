@@ -14,24 +14,11 @@ import java.util.concurrent.TimeUnit;
 
 @Ignore
 public class AdvancedKafkaTest {
-    private static final int numOfProducer = 2;
-    private static final int numOfConsumer = 4;
+
 
     @Test
     public void test() throws IOException, InterruptedException {
 
-        ExecutorService producerExecutor = Executors.newFixedThreadPool(numOfProducer);
-        for (int i = 0; i < numOfProducer; i++) {
-            Properties properties = PropertyUtils.loadProperties("producer.properties");
-            properties.put(ProducerConfig.CLIENT_ID_CONFIG, String.valueOf(i));
-            producerExecutor.submit(new GenericProducer(properties));
-        }
 
-
-        GenericConsumerManager consumerManager = new GenericConsumerManager("consumer.properties", numOfConsumer);
-        consumerManager.startAll();
-
-        producerExecutor.awaitTermination(3, TimeUnit.SECONDS);
-        consumerManager.stopAll();
     }
 }

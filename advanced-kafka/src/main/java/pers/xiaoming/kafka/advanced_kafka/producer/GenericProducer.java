@@ -21,9 +21,10 @@ public class GenericProducer<K, V> extends Thread implements AutoCloseable {
 
     private ProducerRecordGenerator<K, V> dataGenerator;
 
-    public GenericProducer(Properties properties) throws IOException {
+    public GenericProducer(Properties properties, ProducerRecordGenerator<K, V> dataGenerator) throws IOException {
         this.topic = properties.getProperty("topic");
         this.producer = new KafkaProducer<>(properties);
+        this.dataGenerator = dataGenerator;
     }
 
     @Override
