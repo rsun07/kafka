@@ -1,8 +1,6 @@
-package pers.xiaoming.kafka.advanced_kafka.test;
+package pers.xiaoming.kafka.advanced_kafka.runner;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerConfig;
-import pers.xiaoming.kafka.advanced_kafka.PropertyUtils;
 import pers.xiaoming.kafka.advanced_kafka.consumer.GenericConsumerManager;
 import pers.xiaoming.kafka.advanced_kafka.producer.GenericProducer;
 import pers.xiaoming.kafka.advanced_kafka.producer.ProducerRecordGenerator;
@@ -12,8 +10,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-@Slf4j
-public class GenericTestRunner<K, V> extends Thread {
+public class GenericRunner<K, V> extends Thread {
+    private static final int DEFAULT_NUM_OF_PRODUCER = 1;
+    private static final int DEFAULT_NUM_OF_CONSUMER = 1;
+    private static final String DEFAULT_PRODUCER_PROPERTY_FILE_NAME = "producer.properties";
+    private static final String DEFAULT_CONSUMER_PROPERTY_FILE_NAME = "consumer.properties";
+    private static final int DEFAULT_TIMEOUT = 3;
+    private static final TimeUnit DEFAULT_TIMEOUT_UNIT = TimeUnit.SECONDS;
+
     private final int numOfProducer;
     private final int numOfConsumer;
     private final String producerPropertyFileName;
@@ -23,10 +27,22 @@ public class GenericTestRunner<K, V> extends Thread {
     private final int timeout;
     private final TimeUnit timeUnit;
 
-    public GenericTestRunner(int numOfProducer, int numOfConsumer,
-                             String producerPropertyFileName, String consumerPropertyFileName,
-                             ProducerRecordGenerator<K, V> recordGenerator,
-                             int timeout, TimeUnit timeUnit) {
+    public GenericRunner(ProducerRecordGenerator<K, V> recordGenerator) {
+        this(DEFAULT_NUM_OF_PRODUCER, DEFAULT_NUM_OF_CONSUMER,
+                DEFAULT_PRODUCER_PROPERTY_FILE_NAME, DEFAULT_CONSUMER_PROPERTY_FILE_NAME,
+                recordGenerator, DEFAULT_TIMEOUT, DEFAULT_TIMEOUT_UNIT);
+    }
+
+    public GenericRunner(int numOfProducer, int numOfConsumer, ProducerRecordGenerator<K, V> recordGenerator) {
+        this(numOfProducer, numOfConsumer,
+                DEFAULT_PRODUCER_PROPERTY_FILE_NAME, DEFAULT_CONSUMER_PROPERTY_FILE_NAME,
+                recordGenerator, DEFAULT_TIMEOUT, DEFAULT_TIMEOUT_UNIT);
+    }
+
+    public GenericRunner(int numOfProducer, int numOfConsumer,
+                         String producerPropertyFileName, String consumerPropertyFileName,
+                         ProducerRecordGenerator<K, V> recordGenerator,
+                         int timeout, TimeUnit timeUnit) {
         this.numOfProducer = numOfProducer;
         this.numOfConsumer = numOfConsumer;
         this.producerPropertyFileName = producerPropertyFileName;
@@ -53,7 +69,7 @@ public class GenericTestRunner<K, V> extends Thread {
             producerExecutor.awaitTermination(timeout, timeUnit);
             consumerManager.stopAll();
         } catch (Exception e) {
-            log.error(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
